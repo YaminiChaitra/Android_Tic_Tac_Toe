@@ -58,3 +58,11 @@ steps:
 - task: Bash@3
   inputs:
     filePath: 'test.sh'
+
+- task: AppCenterDistribute@3
+  inputs:
+    serverEndpoint: 'tic-toc-toe'
+    appSlug: 'pandiri.chaitra-mphasis.com/tic-tioc-toe'
+    appFile: '$(Build.ArtifactStagingDirectory)/drop/app/build/outputs/apk/debug/app-debug.apk'
+    releaseNotesOption: 'input'
+    destinationType: 'groups'
