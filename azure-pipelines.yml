@@ -40,7 +40,13 @@ steps:
   displayName: Publish artifacts
 
 
-
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '**/*.apk'
+    apksignerKeystoreFile: 'keystore-keys.jks'
+    apksignerKeystorePassword: 'Gene1ral12345$'
+    apksignerKeystoreAlias: 'upload'
+    apksignerKeyPassword: 'Gene1ral12345$'
 
 # **********************************
 - task: Bash@3
